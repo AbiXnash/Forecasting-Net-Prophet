@@ -1,43 +1,28 @@
 # Forecasting-Net-Prophet
 
-## Introduction
-Forecasting-Net-Prophet is a project focused on time series forecasting using the Facebook Prophet model. The project utilizes Jupyter notebooks (`.ipynb` files) to explore and analyze the data, build models, and evaluate their performance.
+Time-series analysis and forecasting with [Prophet](https://facebook.github.io/prophet/), written as a growth analyst
+at MercadoLibre. One Google Colab notebook answers four questions:
 
-## Features
-- Time series forecasting using Facebook Prophet
-- Exploratory data analysis and visualization
-- Model evaluation and comparison
-- Easy-to-follow Jupyter notebooks
+1. **Unusual patterns:** was Google search traffic for the company unusual in May 2020, the month of its quarterly
+   results? (Compares May's total with the monthly median.)
+2. **Seasonality:** how does search traffic vary by hour of day, day of week and week of year? (hvPlot charts and
+   a heatmap.)
+3. **Search vs. stock price:** does lagged search traffic relate to stock volatility or hourly returns? (Adds
+   `Lagged Search Trends`, `Stock Volatility` and `Hourly Stock Return` columns and a correlation table.)
+4. **Forecasts:** a Prophet model of hourly search traffic about 80 days ahead, with its trend and seasonal
+   components, and a Prophet forecast of daily revenue for the next quarter, with a total for the finance team.
 
-## Installation
-To install Forecasting-Net-Prophet, follow these steps:
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/AbiXnash/Forecasting-Net-Prophet.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd Forecasting-Net-Prophet
-   ```
-3. Install the required dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
+## Data
 
-## Usage
-To run the Jupyter notebooks, use the following command:
-```sh
-jupyter notebook
-```
-Open the desired `.ipynb` file in your browser to explore and run the code.
+The notebook uploads three CSVs in Colab: `google_hourly_search_trends.csv`, `mercado_stock_price.csv` and
+`mercado_daily_revenue.csv`. They aren't included in this repository.
 
-## Contribution
-Contributions are welcome! Please follow these steps to contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
+## Run it
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Open `forecasting_net_prophet.ipynb` in [Google Colab](https://colab.research.google.com/) and run the cells. The
+first cell installs `pystan`, `fbprophet`, `hvplot` and `holoviews`. The `fbprophet` package has since been renamed
+`prophet`; on a current Python, install `prophet` and change the import to `from prophet import Prophet`.
+
+## Licence
+
+MIT, see [LICENSE](LICENSE).
